@@ -21,7 +21,7 @@ class Alien(Sprite):
         self.rect.x = self.rect.width
         self.rect.y = self.rect.height
 
-        # Store the alien's exact hkorizontal position.
+        # Store the alien's exact horizontal position.
         self.x = float(self.rect.x)
 
     def check_edges(self):
