@@ -4,7 +4,7 @@ import json
 import plotly.express as px
 
 # Read data as a string and convert to a Python object.
-path = Path('Downloading_Data/eq_data/eq_data_30_day_m1.geojson')
+path = Path('Downloading_Data/eq_data/1.0_month.geojson')
 contents = path.read_text(encoding='utf-8')
 all_eq_data = json.loads(contents)
 
