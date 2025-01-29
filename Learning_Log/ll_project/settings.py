@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from platformshconfig import Config
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -134,3 +135,28 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = 'learning_logs:index'
 LOGOUT_REDIRECT_URL = 'learning_logs:index'
 LOGIN_URL = 'accounts:login'
+
+# Platform.sh settings.
+
+config = Config()
+if config.is_valid_platform():
+    ALLOWED_HOSTS.append('.platformsh.site')
+    DEBUG = False
+
+    if config.appDir:
+        STATIC_ROOT = Path(config.appDir) / 'static'
+    if config.projectEntropy:
+        SECRET_KEY = config.projectEntropy
+
+    if not config.in_build():
+        db_settings = config.credentials('database')
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': db_settings['path'],
+                'USER': db_settings['username'],
+                'PASSWORD': db_settings['password'],
+                'HOST': db_settings['host'],
+                'PORT': db_settings['port'],
+            },
+        }
