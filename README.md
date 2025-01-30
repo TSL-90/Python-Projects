@@ -1,8 +1,9 @@
 # Python Crash Course Projects
 
-Welcome to my GitHub repository showcasing projects inspired by the book *Python Crash Course, Third Edition* by Eric Matthes!
+Welcome to my GitHub repository showcasing a few projects from the book *Python Crash Course, Third Edition* by Eric Matthes!
 These projects are part of my journey to strengthen my Python skills and explore the fundamentals of programming.
 Each project builds on concepts like data manipulation, user interaction, and creating functional applications.
+As I continue to develop my programming skills and gain more confidence, I'll be uploading additional projects that I complete independently.
 
 ---
 
@@ -34,6 +35,19 @@ Each project builds on concepts like data manipulation, user interaction, and cr
   - CRUD functionality for entries
   - Clean, responsive design
 - **Skills Learned**: Django framework, database management, and creating dynamic web applications.
+
+---
+
+## 💻 Independent Projects:
+
+### 1. **Calculator**
+
+- **Description**: A basic calculator application that performs arithmetic operations like addition, subtraction, multiplication, and division.
+- **Features**:
+  - Simple command-line interface
+  - Handles multiple operations in one session
+  - User-friendly prompts and error handling for invalid input
+- **Skills Learned**:Functions, user input handling, and error management.
 
 ---
 
